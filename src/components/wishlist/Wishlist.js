@@ -1,7 +1,7 @@
 function Cart() {
   return (
     <>
-      <h1>This is Cart CartComponent</h1>
+      <h1>This is Wishlist</h1>
     </>
   )
 }

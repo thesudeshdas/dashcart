@@ -3,6 +3,7 @@ import { useState } from 'react'
 import * as icons from '../../assets/icons'
 import productData from '../../database/productData'
 import { useCartContext } from '../cart/CartContext'
+import Rating from '../rating/Rating'
 
 function ProductListing() {
   const [isLoading, setIsLoading] = useState(false)
@@ -26,27 +27,43 @@ function ProductListing() {
 
       <div className="container-card">
         {productList.map((product, index) => (
-          <div key={product.id} className="card">
-            <div className="details-product">
-              <div className="product-name">{product.name.text}</div>
-              <div className="product-price">
-                Rs. {product.price.discounted}
+          <div className="card card-product-horizontal">
+            <div className="card-product-container-image flex-center">
+              <img
+                className="card-product-image"
+                src={product.images[0].url}
+                alt={product.images[0].altText}
+              />
+              <div className="card-product-wishlist">
+                <icons.IcRoundFavorite />
               </div>
-              <div className="container-button">
-                <button type="button" className="button-wishlist">
-                  <icons.IonHeart />
-                </button>
-                <button
-                  type="button"
-                  className="button-add-to-cart"
-                  onClick={() => addToCart(product)}
-                >
-                  <div className="icon-cart">
-                    <icons.IonCart />
-                  </div>
-                  Add to cart
-                </button>
+            </div>
+            <div className="card-product-description">
+              <div className="card-product-name">{product.name.text}</div>
+              <div className="card-product-rating">
+                <Rating stars={product.rating.stars} />
               </div>
+              <div className="card-product-container-price">
+                <div className="card-product-discounted-price">
+                  ₹ {product.price.discounted}
+                </div>
+                <div className="card-product-original-price">
+                  ₹ {product.price.original}
+                </div>
+                <div className="card-product-discount">
+                  ( {product.price.discount}% )
+                </div>
+              </div>
+              <button
+                type="button"
+                className="button button-primary card-product-primary-button"
+                onClick={() => addToCart(product)}
+              >
+                <div className="cart-product-primary-button-icon">
+                  <icons.IcRoundShoppingCart />
+                </div>
+                Add to Cart
+              </button>
             </div>
           </div>
         ))}

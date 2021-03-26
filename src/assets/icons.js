@@ -40,30 +40,6 @@ function IonCloseRound() {
   )
 }
 
-function IonCart() {
-  return (
-    <svg width="1em" height="1em" viewBox="0 0 512 512">
-      <circle cx="176" cy="416" r="32" fill="currentColor" />
-      <circle cx="400" cy="416" r="32" fill="currentColor" />
-      <path
-        d="M456.8 120.78a23.92 23.92 0 0 0-18.56-8.78H133.89l-6.13-34.78A16 16 0 0 0 112 64H48a16 16 0 0 0 0 32h50.58l45.66 258.78A16 16 0 0 0 160 368h256a16 16 0 0 0 0-32H173.42l-5.64-32h241.66A24.07 24.07 0 0 0 433 284.71l28.8-144a24 24 0 0 0-5-19.93z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
-
-function IonHeart() {
-  return (
-    <svg width="1em" height="1em" viewBox="0 0 512 512">
-      <path
-        d="M256 448a32 32 0 0 1-18-5.57c-78.59-53.35-112.62-89.93-131.39-112.8c-40-48.75-59.15-98.8-58.61-153C48.63 114.52 98.46 64 159.08 64c44.08 0 74.61 24.83 92.39 45.51a6 6 0 0 0 9.06 0C278.31 88.81 308.84 64 352.92 64c60.62 0 110.45 50.52 111.08 112.64c.54 54.21-18.63 104.26-58.61 153c-18.77 22.87-52.8 59.45-131.39 112.8a32 32 0 0 1-18 5.56z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
-
 function IonLoadA() {
   return (
     <svg width="1em" height="1em" viewBox="0 0 512 512">
@@ -97,4 +73,61 @@ function IonTrashB() {
   )
 }
 
-export { IonMenu, IonCloseRound, IonCart, IonHeart, IonLoadA, IonTrashB }
+export function IcRoundStar(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M14.43 10l-1.47-4.84c-.29-.95-1.63-.95-1.91 0L9.57 10H5.12c-.97 0-1.37 1.25-.58 1.81l3.64 2.6l-1.43 4.61c-.29.93.79 1.68 1.56 1.09l3.69-2.8l3.69 2.81c.77.59 1.85-.16 1.56-1.09l-1.43-4.61l3.64-2.6c.79-.57.39-1.81-.58-1.81h-4.45z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function IcRoundStarBorder(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M12 8.89l.94 3.11h2.82l-2.27 1.62l.93 3.01L12 14.79l-2.42 1.84l.93-3.01L8.24 12h2.82L12 8.89M9.58 10H5.12c-.97 0-1.37 1.25-.58 1.81l3.64 2.6l-1.43 4.61c-.29.93.79 1.68 1.56 1.09l3.69-2.8l3.69 2.81c.77.59 1.85-.16 1.56-1.09l-1.43-4.61l3.64-2.6c.79-.57.39-1.81-.58-1.81h-4.46l-1.47-4.84c-.29-.95-1.63-.95-1.91 0L9.58 10z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function IcRoundFavorite(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M10.67 19.8C5.15 14.85 1.95 12.16 2 8.41c.04-2.97 2.3-4.39 2.35-4.43c3.61-2.46 6.89.22 7.65 1.11c.75-.88 3.99-3.51 7.56-1.16c.52.34 2.23 1.65 2.42 4.12c.32 4.28-4.14 7.76-8.65 11.76c-.38.34-.86.5-1.34.5c-.47 0-.94-.17-1.32-.51z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function IcRoundFavoriteBorder(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M19.66 3.99c-2.64-1.8-5.9-.96-7.66 1.1c-1.76-2.06-5.02-2.91-7.66-1.1c-1.4.96-2.28 2.58-2.34 4.29c-.14 3.88 3.3 6.99 8.55 11.76l.1.09c.76.69 1.93.69 2.69-.01l.11-.1c5.25-4.76 8.68-7.87 8.55-11.75c-.06-1.7-.94-3.32-2.34-4.28zM12.1 18.55l-.1.1l-.1-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function IcRoundShoppingCart(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M15.55 13c1.22 0 1.74-1.01 1.75-1.03l3.55-6.44c.23-.45.18-.84-.01-1.11c-.18-.26-.51-.42-.84-.42H5.21l-.67-1.43a.993.993 0 0 0-.9-.57H2c-.55 0-1 .45-1 1s.45 1 1 1h1l3.6 7.59l-1.35 2.44C4.52 15.37 5.48 17 7 17h11c.55 0 1-.45 1-1s-.45-1-1-1H7l1.1-2h7.45z"
+        fill="currentColor"
+      />
+      <circle cx="7" cy="20" r="2" fill="currentColor" />
+      <circle cx="17" cy="20" r="2" fill="currentColor" />
+    </svg>
+  )
+}
+
+export { IonMenu, IonCloseRound, IonLoadA, IonTrashB }

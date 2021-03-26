@@ -9,10 +9,10 @@ function TopNavigationbar({ changeRoute }) {
           <ul>
             <li onClick={() => changeRoute('products')}>Products</li>
             <li onClick={() => changeRoute('wishlist')}>
-              <icons.IonHeart />
+              <icons.IcRoundFavorite />
             </li>
             <li onClick={() => changeRoute('cart')}>
-              <icons.IonCart />
+              <icons.IcRoundShoppingCart />
             </li>
           </ul>
         </div>

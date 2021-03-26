@@ -1,34 +1,3 @@
-function IonMenu() {
-  return (
-    <svg width="1em" height="1em" viewBox="0 0 512 512">
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeMiterlimit="10"
-        strokeWidth="48"
-        d="M88 152h336"
-      />
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeMiterlimit="10"
-        strokeWidth="48"
-        d="M88 256h336"
-      />
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeMiterlimit="10"
-        strokeWidth="48"
-        d="M88 360h336"
-      />
-    </svg>
-  )
-}
-
 function IonCloseRound() {
   return (
     <svg width="1em" height="1em" viewBox="0 0 512 512">
@@ -130,4 +99,15 @@ export function IcRoundShoppingCart(props) {
   )
 }
 
-export { IonMenu, IonCloseRound, IonLoadA, IonTrashB }
+export function IcRoundMenu(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export { IonCloseRound, IonLoadA, IonTrashB }

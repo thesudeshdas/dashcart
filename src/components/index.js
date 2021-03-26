@@ -1,7 +1,7 @@
 import Cart from './cart/Cart'
 import ProductListing from './product-listing/ProductListing'
-import TopNavigationbar from './top-navigation-bar/TopNavigationBar'
+import TopNavbar from './top-navbar/TopNavbar'
 import Wishlist from './wishlist/Wishlist'
 import Rating from './rating/Rating'
 
-export { Cart, ProductListing, TopNavigationbar, Wishlist, Rating }
+export { Cart, ProductListing, TopNavbar, Wishlist, Rating }

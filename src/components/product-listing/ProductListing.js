@@ -27,7 +27,10 @@ function ProductListing() {
 
       <div className="container-card">
         {productList.map((product, index) => (
-          <div className="card card-product-horizontal">
+          <div
+            style={{ width: '99.75%' }}
+            className="card card-product-horizontal"
+          >
             <div className="card-product-container-image flex-center">
               <img
                 className="card-product-image"
@@ -35,7 +38,7 @@ function ProductListing() {
                 alt={product.images[0].altText}
               />
               <div className="card-product-wishlist">
-                <icons.IcRoundFavorite />
+                <icons.IcRoundFavoriteBorder />
               </div>
             </div>
             <div className="card-product-description">

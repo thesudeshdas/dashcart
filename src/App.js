@@ -1,12 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import { useState } from 'react'
 import './App.css'
-import {
-  Cart,
-  ProductListing,
-  TopNavigationbar,
-  Wishlist,
-} from './components/index'
+import { Cart, ProductListing, TopNavbar, Wishlist } from './components/index'
 
 function App() {
   const [route, setRoute] = useState('products')
@@ -15,7 +10,7 @@ function App() {
 
   return (
     <>
-      <TopNavigationbar changeRoute={handleRouteChange} />
+      <TopNavbar changeRoute={handleRouteChange} />
 
       {route === 'products' ? (
         <ProductListing />

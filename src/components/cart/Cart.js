@@ -34,7 +34,7 @@ function Cart() {
 
   return (
     <>
-      <h1>This is Cart CartComponent</h1>
+      <h1>Shopping Cart</h1>
       <div>
         {cartList.map((product, index) => (
           <div key={product.id} className="card card-cart-item">
@@ -93,6 +93,7 @@ function Cart() {
                 <button
                   type="button"
                   className="button button-icon card-cart-item-quantity-action"
+                  onClick={() => decreaseQuantityInCart(product)}
                 >
                   {product.quantity > 1 ? (
                     <icons.IcRoundMinus />

@@ -1,6 +1,9 @@
 import * as icons from '../../assets/icons'
+import { useCartContext } from '../cart/CartContext'
 
 function TopNavbar({ changeRoute }) {
+  const { cartList } = useCartContext()
+
   return (
     <nav className="top-navbar">
       <div className="top-navbar-mobile-menu">
@@ -26,10 +29,15 @@ function TopNavbar({ changeRoute }) {
         </button>
         <button
           type="button"
-          className="button button-icon top-navbar-icon"
+          className="button button-icon top-navbar-icon top-navbar-cart-button"
           onClick={() => changeRoute('cart')}
         >
           <icons.IcRoundShoppingCart />
+          {cartList.length > 0 && (
+            <span className="badge-cart-button flex-center">
+              {cartList.length}
+            </span>
+          )}
         </button>
       </div>
     </nav>

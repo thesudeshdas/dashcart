@@ -110,4 +110,37 @@ export function IcRoundMenu(props) {
   )
 }
 
+export function IcRoundDelete(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM18 4h-2.5l-.71-.71c-.18-.18-.44-.29-.7-.29H9.91c-.26 0-.52.11-.7.29L8.5 4H6c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function IcRoundPlus(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function IcRoundMinus(props) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24">
+      <path
+        d="M18 12.998H6a1 1 0 0 1 0-2h12a1 1 0 0 1 0 2z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 export { IonCloseRound, IonLoadA, IonTrashB }

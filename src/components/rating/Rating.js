@@ -5,11 +5,11 @@ function Rating({ stars }) {
 
   for (let i = 0; i < 5; i += 1) {
     if (i < stars) {
-      ratingArr.push(<icons.IcRoundStar />)
-    } else ratingArr.push(<icons.IcRoundStarBorder />)
+      ratingArr.push(<icons.IcRoundStar key={`Star ${i}`} />)
+    } else ratingArr.push(<icons.IcRoundStarBorder key={`Star ${i}`} />)
   }
 
-  return <div className="rating">{ratingArr.map((item) => item)}</div>
+  return <div className="rating">{ratingArr}</div>
 }
 
 export default Rating

@@ -12,7 +12,9 @@ function ProductListing() {
 
   const addToCart = (product) => {
     setCartList((cartList) =>
-      cartList.filter((item) => item.id !== product.id).concat(product)
+      cartList
+        .filter((item) => item.id !== product.id)
+        .concat({ ...product, quantity: 1 })
     )
   }
 
@@ -27,10 +29,7 @@ function ProductListing() {
 
       <div className="container-card">
         {productList.map((product, index) => (
-          <div
-            style={{ width: '99.75%' }}
-            className="card card-product-horizontal"
-          >
+          <div key={product.id} className="card card-product-horizontal">
             <div className="card-product-container-image flex-center">
               <img
                 className="card-product-image"

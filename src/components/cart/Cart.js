@@ -3,13 +3,10 @@ import * as icons from '../../assets/icons'
 import QuantityAction from '../quantity-action/QuantityAction'
 
 function Cart() {
-  const { cartList, setCartList } = useCartContext()
-
-  const deleteFromCart = (product) => {
-    setCartList((prevCartList) =>
-      prevCartList.filter((item) => item.id !== product.id)
-    )
-  }
+  const {
+    state: { cartList },
+    dispatch: cartDispatch,
+  } = useCartContext()
 
   return (
     <>
@@ -38,7 +35,12 @@ function Cart() {
                   <button
                     type="button"
                     className="button button-primary card-cart-item-delete"
-                    onClick={() => deleteFromCart(product)}
+                    onClick={() =>
+                      cartDispatch({
+                        type: 'DELETE_FROM_CART',
+                        payload: product,
+                      })
+                    }
                   >
                     Delete
                   </button>
@@ -50,7 +52,9 @@ function Cart() {
               <button
                 type="button"
                 className="button button-primary card-cart-item-delete"
-                onClick={() => deleteFromCart(product)}
+                onClick={() =>
+                  cartDispatch({ type: 'DELETE_FROM_CART', payload: product })
+                }
               >
                 Delete
               </button>

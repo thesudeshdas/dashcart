@@ -2,7 +2,9 @@ import * as icons from '../../assets/icons'
 import { useCartContext } from '../cart/CartContext'
 
 function TopNavbar({ changeRoute }) {
-  const { cartList } = useCartContext()
+  const {
+    state: { cartList },
+  } = useCartContext()
 
   return (
     <nav className="top-navbar">
@@ -36,6 +38,9 @@ function TopNavbar({ changeRoute }) {
           {cartList.length > 0 && (
             <span className="badge-cart-button flex-center">
               {cartList.length}
+
+              {/* changin the quantity at top of the navabr */}
+              {/* {cartList.reduce((acc, cur) => acc.quantity + cur)} */}
             </span>
           )}
         </button>

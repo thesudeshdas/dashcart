@@ -1,22 +1,20 @@
-/* eslint-disable no-shadow */
+/* eslint-disable */
 import { useState } from 'react'
 import * as icons from '../../assets/icons'
 import productData from '../../database/productData'
 import { useCartContext } from '../cart/CartContext'
+import QuantityAction from '../quantity-action/QuantityAction'
 import Rating from '../rating/Rating'
 
 function ProductListing() {
   const [isLoading, setIsLoading] = useState(false)
   const [productList, setProductList] = useState(productData)
-  const { cartList, setCartList } = useCartContext()
+  const {
+    state: { cartList },
+    dispatch: cartDispatch,
+  } = useCartContext()
 
-  const addToCart = (product) => {
-    setCartList((cartList) =>
-      cartList
-        .filter((item) => item.id !== product.id)
-        .concat({ ...product, quantity: 1 })
-    )
-  }
+  const caalFunc = () => <h1>Hello</h1>
 
   return (
     <div>
@@ -36,9 +34,12 @@ function ProductListing() {
                 src={product.images[0].url}
                 alt={product.images[0].altText}
               />
-              <div className="card-product-wishlist">
+              <button
+                type="button"
+                className="buton button-icon card-product-wishlist"
+              >
                 <icons.IcRoundFavoriteBorder />
-              </div>
+              </button>
             </div>
             <div className="card-product-description">
               <div className="card-product-name">{product.name.text}</div>
@@ -56,16 +57,31 @@ function ProductListing() {
                   ( {product.price.discount}% )
                 </div>
               </div>
-              <button
-                type="button"
-                className="button button-primary card-product-primary-button"
-                onClick={() => addToCart(product)}
-              >
-                <div className="cart-product-primary-button-icon">
-                  <icons.IcRoundShoppingCart />
-                </div>
-                Add to Cart
-              </button>
+
+              {
+                // Refactor to change this filter, using a better approach
+                cartList.filter((item) => item.id === product.id).length >
+                0 ? (
+                  <QuantityAction
+                    product={
+                      cartList.filter((item) => item.id === product.id)[0]
+                    }
+                  />
+                ) : (
+                  <button
+                    type="button"
+                    className="button button-primary card-product-primary-button"
+                    onClick={() =>
+                      cartDispatch({ type: 'ADD_TO_CART', payload: product })
+                    }
+                  >
+                    <div className="cart-product-primary-button-icon">
+                      <icons.IcRoundShoppingCart />
+                    </div>
+                    Add to Cart
+                  </button>
+                )
+              }
             </div>
           </div>
         ))}

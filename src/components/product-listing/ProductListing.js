@@ -60,13 +60,14 @@ function ProductListing() {
 
               {
                 // Refactor to change this filter, using a better approach
-                cartList.filter((item) => item.id === product.id).length >
-                0 ? (
-                  <QuantityAction
-                    product={
-                      cartList.filter((item) => item.id === product.id)[0]
-                    }
-                  />
+                cartList.filter((item) => item.id === product.id).length > 0 ? (
+                  <div className="product-listing-quantity-action">
+                    <QuantityAction
+                      product={
+                        cartList.filter((item) => item.id === product.id)[0]
+                      }
+                    />
+                  </div>
                 ) : (
                   <button
                     type="button"

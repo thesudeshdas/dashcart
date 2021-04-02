@@ -52,11 +52,22 @@
   border-radius: 50%;
 }
 
+.product-listing-quantity-action {
+  position: absolute;
+  bottom: var(--space-xs);
+  transform: scale(0.7) translateX(-20%);
+}
+
 @media (min-width: 768px) {
   .badge-cart-button {
     top: -0.5rem;
     right: -0.5rem;
     font-size: var(--font-m);
     padding: var(--space-xs);
+  }
+
+  .product-listing-quantity-action {
+    bottom: var(--space-s);
+    transform: scale(1);
   }
 }

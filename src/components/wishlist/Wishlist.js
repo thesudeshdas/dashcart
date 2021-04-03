@@ -13,7 +13,7 @@ function Wishlist() {
   return (
     <>
       <h1>This is Wishlist</h1>
-      <div>
+      <div className="container-wishlist-item">
         {wishlist.map((product) => (
           <div key={product.id} className="card card-wishlist-item">
             <div className="card-wishlist-item-container-image flex-center">

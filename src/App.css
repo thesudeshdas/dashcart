@@ -36,6 +36,17 @@
   --z-10: 10;
 }
 
+.container-wishlist-item {
+  padding: var(--space-m);
+  width: 97.5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-wishlist-item {
+  margin: var(--space-s);
+}
+
 .top-navbar-cart-button {
   position: relative;
 }

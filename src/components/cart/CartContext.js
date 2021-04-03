@@ -21,9 +21,9 @@ export function CartProvider({ children }) {
       case 'DELETE_FROM_CART':
         return {
           ...state,
-          cartList: [
-            ...state.cartList.filter((item) => item.id !== action.payload.id),
-          ],
+          cartList: state.cartList.filter(
+            (item) => item.id !== action.payload.id
+          ),
         }
 
       case 'DECREASE_QUANTITY_IN_CART':

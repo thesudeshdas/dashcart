@@ -15,7 +15,7 @@ function Wishlist() {
       <h1>This is Wishlist</h1>
       <div>
         {wishlist.map((product) => (
-          <div className="card card-wishlist-item">
+          <div key={product.id} className="card card-wishlist-item">
             <div className="card-wishlist-item-container-image flex-center">
               <img
                 className="card-wishlist-image"

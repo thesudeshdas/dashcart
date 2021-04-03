@@ -40,13 +40,23 @@ function ProductListing() {
                 src={product.images[0].url}
                 alt={product.images[0].altText}
               />
-              <button
+              
+              {
+                wishlist.find(item => item.id === product.id) ? <button
+                type="button"
+                className="buton button-icon card-product-wishlist"
+                onClick={() => wishlistDispatch({type: 'DELETE_FROM_WISHLIST', payload: product})}
+              >
+                <icons.IcRoundFavorite />
+              </button> : <button
                 type="button"
                 className="buton button-icon card-product-wishlist"
                 onClick={() => wishlistDispatch({type: 'ADD_TO_WISHLIST', payload: product})}
               >
                 <icons.IcRoundFavoriteBorder />
               </button>
+              }
+              
             </div>
             <div className="card-product-description">
               <div className="card-product-name">{product.name.text}</div>

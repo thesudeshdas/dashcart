@@ -44,9 +44,9 @@ export function WishlistProvider({ children }) {
       case 'DELETE_FROM_WISHLIST':
         return {
           ...state,
-          wishlist: [
-            ...state.wishlist.filter((item) => item.id !== action.payload.id),
-          ],
+          wishlist: state.wishlist.filter(
+            (item) => item.id !== action.payload.id
+          ),
         }
       default:
         return state

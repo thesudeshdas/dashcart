@@ -12,7 +12,10 @@ export function CartProvider({ children }) {
       case 'ADD_TO_CART':
         return {
           ...state,
-          cartList: [...state.cartList, { ...action.payload, quantity: 1 }],
+          cartList: [
+            ...state.cartList.filter((item) => item.id !== action.payload.id),
+            { ...action.payload, quantity: 1 },
+          ],
         }
 
       case 'DELETE_FROM_CART':

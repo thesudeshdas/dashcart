@@ -1,4 +1,5 @@
 import * as icons from '../../assets/icons'
+import { useCartContext } from '../cart/CartContext'
 import { useWishlistContext } from './WishlistContext'
 
 function Wishlist() {
@@ -6,6 +7,8 @@ function Wishlist() {
     state: { wishlist },
     dispatch: wishlistDispatch,
   } = useWishlistContext()
+
+  const { dispatch: cartDispatch } = useCartContext()
 
   return (
     <>
@@ -40,12 +43,25 @@ function Wishlist() {
                 <button
                   type="button"
                   className="button button-secondary card-wishlist-item-delete-button flex-center"
+                  onClick={() =>
+                    wishlistDispatch({
+                      type: 'DELETE_FROM_WISHLIST',
+                      payload: product,
+                    })
+                  }
                 >
                   <icons.IcRoundDelete />
                 </button>
                 <button
                   type="button"
                   className="button button-primary card-wishlist-item-primary-button"
+                  onClick={() => {
+                    cartDispatch({ type: 'ADD_TO_CART', payload: product })
+                    wishlistDispatch({
+                      type: 'DELETE_FROM_WISHLIST',
+                      payload: product,
+                    })
+                  }}
                 >
                   <div className="cart-product-primary-button-icon">
                     <icons.IcRoundShoppingCart />

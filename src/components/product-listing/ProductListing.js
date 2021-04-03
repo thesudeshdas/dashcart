@@ -5,6 +5,7 @@ import productData from '../../database/productData'
 import { useCartContext } from '../cart/CartContext'
 import QuantityAction from '../quantity-action/QuantityAction'
 import Rating from '../rating/Rating'
+import { useWishlistContext } from '../wishlist/WishlistContext'
 
 function ProductListing() {
   const [isLoading, setIsLoading] = useState(false)
@@ -13,6 +14,11 @@ function ProductListing() {
     state: { cartList },
     dispatch: cartDispatch,
   } = useCartContext()
+  
+  const {
+    state: { wishlist },
+    dispatch: wishlistDispatch
+  } = useWishlistContext()
 
   const caalFunc = () => <h1>Hello</h1>
 
@@ -37,6 +43,7 @@ function ProductListing() {
               <button
                 type="button"
                 className="buton button-icon card-product-wishlist"
+                onClick={() => wishlistDispatch({type: 'ADD_TO_WISHLIST', payload: product})}
               >
                 <icons.IcRoundFavoriteBorder />
               </button>

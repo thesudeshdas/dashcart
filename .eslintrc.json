@@ -1,13 +1,13 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "plugin:prettier/recommended",
         "airbnb",
-        "prettier"
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -20,14 +20,11 @@
         "react"
     ],
     "rules": {
-        "react/react-in-jsx-scope": 0,
-        "react/jsx-filename-extension": 0,
-        "react/prop-types": 0,
-        "jsx-a11y/click-events-have-key-events": 0,
-        "jsx-a11y/no-noninteractive-element-interactions": 0,
-        "no-unused-vars": 0,
-        "no-shadow": 0,
-        "import/prefer-default-export": 0,
-        "no-nested-ternary": 0
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [1, {
+            "extensions": [".js", ".jsx"]}],
+        "no-nested-ternary": "off",
+        "react/prop-types": "off",
+        "no-unused-vars": "warn"
     }
 }

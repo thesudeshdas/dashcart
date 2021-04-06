@@ -1,7 +1,7 @@
 import * as icons from '../../assets/icons'
-import { useCartContext } from '../cart/CartContext'
 import Wishlist from '../wishlist/Wishlist'
-import { useWishlistContext } from '../wishlist/WishlistContext'
+import { useCartContext } from '../../contexts/CartContext'
+import { useWishlistContext } from '../../contexts/WishlistContext'
 
 function TopNavbar({ changeRoute }) {
   const {

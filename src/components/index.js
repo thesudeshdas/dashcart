@@ -4,7 +4,8 @@ import InputSlider from './inputs/InputSlider'
 import ProductCard from './cards/ProductCard'
 import QuantityAction from './quantity-action/QuantityAction'
 import Rating from './rating/Rating'
-import TopNavbar from './top-navbar/TopNavbar'
+import SideBarProductFilter from './navigation/SidebarProductFilter'
+import TopNavbar from './navigation/TopNavbar'
 import WishlistItemCard from './cards/WishlistItemCard'
 
 export {
@@ -14,6 +15,7 @@ export {
   ProductCard,
   QuantityAction,
   Rating,
+  SideBarProductFilter,
   TopNavbar,
   WishlistItemCard,
 }

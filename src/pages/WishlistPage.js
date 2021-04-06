@@ -1,9 +1,8 @@
-import * as icons from '../../assets/icons'
-import WishlistItemCard from '../cards/WishlistItemCard'
-import { useCartContext } from '../cart/CartContext'
-import { useWishlistContext } from './WishlistContext'
+import { WishlistItemCard } from '../components'
+import { useCartContext } from '../contexts/CartContext'
+import { useWishlistContext } from '../contexts/WishlistContext'
 
-function Wishlist() {
+function WishlistPage() {
   const {
     state: { wishlist },
     dispatch: wishlistDispatch,
@@ -23,4 +22,4 @@ function Wishlist() {
   )
 }
 
-export default Wishlist
+export default WishlistPage

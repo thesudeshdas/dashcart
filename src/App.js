@@ -1,9 +1,8 @@
-/* eslint-disable no-nested-ternary */
+
 import { useState } from 'react'
 import './App.css'
 import { Cart, TopNavbar, Wishlist } from './components/index'
-import { ProductListingPage } from './pages'
-
+import { ProductListingPage, WishlistPage } from './pages/index'
 
 function App() {
   const [route, setRoute] = useState('products')
@@ -17,7 +16,7 @@ function App() {
       {route === 'products' ? (
         <ProductListingPage />
       ) : route === 'wishlist' ? (
-        <Wishlist />
+        <WishlistPage />
       ) : route === 'cart' ? (
         <Cart />
       ) : null}

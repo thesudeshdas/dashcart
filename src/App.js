@@ -1,8 +1,7 @@
-
 import { useState } from 'react'
 import './App.css'
-import { Cart, TopNavbar, Wishlist } from './components/index'
-import { ProductListingPage, WishlistPage } from './pages/index'
+import { TopNavbar } from './components/index'
+import { ProductListingPage, WishlistPage, CartPage } from './pages/index'
 
 function App() {
   const [route, setRoute] = useState('products')
@@ -18,7 +17,7 @@ function App() {
       ) : route === 'wishlist' ? (
         <WishlistPage />
       ) : route === 'cart' ? (
-        <Cart />
+        <CartPage />
       ) : null}
     </>
   )

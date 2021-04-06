@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { CartProvider } from './components/cart/CartContext'
-import { WishlistProvider } from './components/wishlist/WishlistContext'
+import { CartProvider } from './contexts/CartContext'
+import { WishlistProvider } from './contexts/WishlistContext'
 
 ReactDOM.render(
   <React.StrictMode>

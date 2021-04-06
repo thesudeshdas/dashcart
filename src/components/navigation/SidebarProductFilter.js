@@ -7,7 +7,7 @@ import Rating from '../rating/Rating'
 function SideBarProductFilter() {
   const [filterMobileView, setFilterMobileView] = useState(false)
 
-  const brands = productData.map((item) => item.brand.text)
+  const brands = [...new Set(productData.map((item) => item.brand.text))]
 
   return (
     <>

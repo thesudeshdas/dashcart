@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import productData from '../../database/productData'
 import InputCheckboxes from '../inputs/InputCheckboxes'
 import InputSlider from '../inputs/InputSlider'
 import Rating from '../rating/Rating'
 
-function SideBarProductFilter({ brands }) {
+function SideBarProductFilter() {
   const [filterMobileView, setFilterMobileView] = useState(false)
+
+  const brands = productData.map((item) => item.brand.text)
 
   return (
     <>

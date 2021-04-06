@@ -2,10 +2,7 @@ import QuantityAction from '../quantity-action/QuantityAction'
 import { useCartContext } from '../../contexts/CartContext'
 
 function CartItemCard({ product }) {
-  const {
-    state: { cartList },
-    dispatch: cartDispatch,
-  } = useCartContext()
+  const { dispatch: cartDispatch } = useCartContext()
 
   return (
     <div key={product.id} className="card card-cart-item">

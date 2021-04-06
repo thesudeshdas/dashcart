@@ -75,4 +75,17 @@
     bottom: var(--space-s);
     transform: scale(1);
   }
+
+  .page-product-listing {
+    display: flex;
+  }
+
+  .container-sidebar {
+    width: 17vw;
+    position: relative;
+  }
+
+  .container-card {
+    width: 81.7vw;
+  }
 }

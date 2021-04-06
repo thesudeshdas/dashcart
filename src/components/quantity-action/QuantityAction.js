@@ -1,5 +1,5 @@
 import * as icons from '../../assets/icons'
-import { useCartContext } from '../cart/CartContext'
+import { useCartContext } from '../../contexts/CartContext'
 
 function QuantityAction({ product }) {
   const { dispatch: cartDispatch } = useCartContext()

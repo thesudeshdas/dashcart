@@ -1,14 +1,11 @@
 import { useState } from 'react'
-
 import productData from '../database/productData'
-
 import * as icons from '../assets/icons'
-
 import { useCartContext } from '../contexts/CartContext'
 import { useWishlistContext } from '../contexts/WishlistContext'
 import { ProductCard } from '../components'
 
-function ProductListing() {
+function ProductListingPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [productList, setProductList] = useState(productData)
   const {
@@ -41,4 +38,4 @@ function ProductListing() {
   )
 }
 
-export default ProductListing
+export default ProductListingPage

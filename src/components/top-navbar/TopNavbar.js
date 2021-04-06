@@ -1,5 +1,4 @@
 import * as icons from '../../assets/icons'
-import Wishlist from '../wishlist/Wishlist'
 import { useCartContext } from '../../contexts/CartContext'
 import { useWishlistContext } from '../../contexts/WishlistContext'
 

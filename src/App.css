@@ -47,20 +47,14 @@
   margin: var(--space-s);
 }
 
-.top-navbar-cart-button {
+.top-navbar-icon {
   position: relative;
 }
 
-.badge-cart-button {
-  position: absolute;
-  top: -0.3rem;
-  right: -0.3rem;
-  font-size: var(--font-s);
-  background-color: var(--theme-secondary);
-  width: var(--space-m);
-  height: var(--space-m);
-  border: var(--line-thin) solid var(--bg-alternate);
-  border-radius: 50%;
+.top-navbar-badge-on-button {
+  left: var(--space-m);
+  background: var(--theme-primary);
+  color: var(--bg-alternate);
 }
 
 .product-listing-quantity-action {

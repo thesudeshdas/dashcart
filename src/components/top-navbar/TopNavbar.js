@@ -1,10 +1,15 @@
 import * as icons from '../../assets/icons'
 import { useCartContext } from '../cart/CartContext'
+import Wishlist from '../wishlist/Wishlist'
+import { useWishlistContext } from '../wishlist/WishlistContext'
 
 function TopNavbar({ changeRoute }) {
   const {
     state: { cartList },
   } = useCartContext()
+  const {
+    state: { wishlist },
+  } = useWishlistContext()
 
   return (
     <nav className="top-navbar">
@@ -28,15 +33,23 @@ function TopNavbar({ changeRoute }) {
           onClick={() => changeRoute('wishlist')}
         >
           <icons.IcRoundFavorite />
+          {wishlist.length > 0 && (
+            <span className="badge badge-on-button-icon flex-center top-navbar-badge-on-button">
+              {cartList.length}
+
+              {/* changin the quantity at top of the navabr */}
+              {/* {cartList.reduce((acc, cur) => acc.quantity + cur)} */}
+            </span>
+          )}
         </button>
         <button
           type="button"
-          className="button button-icon top-navbar-icon top-navbar-cart-button"
+          className="button button-icon top-navbar-icon"
           onClick={() => changeRoute('cart')}
         >
           <icons.IcRoundShoppingCart />
           {cartList.length > 0 && (
-            <span className="badge-cart-button flex-center">
+            <span className="badge badge-on-button-icon flex-center top-navbar-badge-on-button">
               {cartList.length}
 
               {/* changin the quantity at top of the navabr */}

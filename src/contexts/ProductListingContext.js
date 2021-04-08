@@ -19,7 +19,6 @@ export function ProductListingProvider({ children }) {
       mininum: Math.min(...productData.map((item) => item.price.discounted)),
     },
     rating: 1,
-    brand: [...new Set(productData.map((item) => item.brand.text))],
   }
 
   const productListingReducer = (state, action) => {

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useProductListingContext } from '../../contexts/ProductListingContext'
-import productData from '../../database/productData'
 
 function InputSlider() {
   const {

@@ -1,15 +1,12 @@
-import productData from '../database/productData'
 import { ProductCard, SideBarProductFilter } from '../components'
 import { useProductListingContext } from '../contexts/ProductListingContext'
 
 function ProductListingPage() {
-  const productList = productData
-
   const {
-    state: { filteredList },
+    state: { filteredList, brands },
   } = useProductListingContext()
 
-  console.log({ filteredList })
+  console.log({ filteredList, brands })
 
   return (
     <div className="page-product-listing">

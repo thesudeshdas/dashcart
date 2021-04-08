@@ -1,8 +1,15 @@
 import productData from '../database/productData'
 import { ProductCard, SideBarProductFilter } from '../components'
+import { useProductListingContext } from '../contexts/ProductListingContext'
 
 function ProductListingPage() {
   const productList = productData
+
+  const {
+    state: { filteredList },
+  } = useProductListingContext()
+
+  console.log({ filteredList })
 
   return (
     <div className="page-product-listing">
@@ -10,7 +17,7 @@ function ProductListingPage() {
         <SideBarProductFilter />
       </div>
       <div className="container-card">
-        {productList.map((product) => (
+        {filteredList.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>

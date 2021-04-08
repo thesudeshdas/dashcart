@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useProductListingContext } from '../../contexts/ProductListingContext'
 
 function InputSlider() {
   const [value, setValue] = useState(10)
@@ -6,6 +7,11 @@ function InputSlider() {
   const handleSlider = (event) => {
     setValue(event.target.value)
   }
+
+  const {
+    state: { productsList },
+    dispatch: productListingDispatch,
+  } = useProductListingContext()
 
   return (
     <input

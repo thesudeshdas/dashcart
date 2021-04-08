@@ -5,14 +5,17 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { CartProvider } from './contexts/CartContext'
 import { WishlistProvider } from './contexts/WishlistContext'
+import { ProductListingProvider } from './contexts/ProductListingContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartProvider>
-      <WishlistProvider>
-        <App />
-      </WishlistProvider>
-    </CartProvider>
+    <ProductListingProvider>
+      <CartProvider>
+        <WishlistProvider>
+          <App />
+        </WishlistProvider>
+      </CartProvider>
+    </ProductListingProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

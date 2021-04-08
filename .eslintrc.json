@@ -25,6 +25,7 @@
             "extensions": [".js", ".jsx"]}],
         "no-nested-ternary": "off",
         "react/prop-types": "off",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "import/prefer-default-export": 0
     }
 }

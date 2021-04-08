@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useProductListingContext } from '../../contexts/ProductListingContext'
 import productData from '../../database/productData'
 import InputCheckboxes from '../inputs/InputCheckboxes'
 import InputSlider from '../inputs/InputSlider'
@@ -6,6 +7,7 @@ import Rating from '../rating/Rating'
 
 function SideBarProductFilter() {
   const [filterMobileView, setFilterMobileView] = useState(false)
+  const { dispatch: productListingDispatch } = useProductListingContext()
 
   const brands = [...new Set(productData.map((item) => item.brand.text))]
 
@@ -43,16 +45,40 @@ function SideBarProductFilter() {
         <div className="sidebar-category">
           <h3 className="sidebar-category-heading">Rating</h3>
           <div className="sidebar-category-component">
-            <button type="button" className="sidebar-button-rating">
+            <button
+              type="button"
+              className="sidebar-button-rating"
+              onClick={() =>
+                productListingDispatch({ type: 'FILTER_BY_RATING', payload: 4 })
+              }
+            >
               <Rating stars={4} />
             </button>
-            <button type="button" className="sidebar-button-rating">
+            <button
+              type="button"
+              className="sidebar-button-rating"
+              onClick={() =>
+                productListingDispatch({ type: 'FILTER_BY_RATING', payload: 3 })
+              }
+            >
               <Rating stars={3} />
             </button>
-            <button type="button" className="sidebar-button-rating">
+            <button
+              type="button"
+              className="sidebar-button-rating"
+              onClick={() =>
+                productListingDispatch({ type: 'FILTER_BY_RATING', payload: 2 })
+              }
+            >
               <Rating stars={2} />
             </button>
-            <button type="button" className="sidebar-button-rating">
+            <button
+              type="button"
+              className="sidebar-button-rating"
+              onClick={() =>
+                productListingDispatch({ type: 'FILTER_BY_RATING', payload: 1 })
+              }
+            >
               <Rating stars={1} />
             </button>
           </div>

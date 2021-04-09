@@ -7,13 +7,11 @@ function InputSlider() {
     dispatch: productListingDispatch,
   } = useProductListingContext()
 
-  const [value, setValue] = useState(
-    Math.max(...productsList.map((item) => item.price.discounted))
-  )
-
   const handleSlider = (event) => {
-    setValue(event.target.value)
-    productListingDispatch({ type: 'FILTER_BY_PRICE', payload: value })
+    productListingDispatch({
+      type: 'FILTER_BY_PRICE',
+      payload: Number(event.target.value),
+    })
   }
 
   return (

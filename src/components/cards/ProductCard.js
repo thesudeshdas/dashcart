@@ -53,7 +53,9 @@ function ProductCard({ product }) {
         )}
       </div>
       <div className="card-product-description">
-        <div className="card-product-name">{product.name.text}</div>
+        <div className="card-product-name">
+          {product.name.text} {product.id}
+        </div>
         <div className="card-product-rating">
           <Rating stars={product.rating.stars} />
         </div>

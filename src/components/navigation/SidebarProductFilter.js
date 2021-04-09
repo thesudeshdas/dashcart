@@ -7,7 +7,10 @@ import Rating from '../rating/Rating'
 
 function SideBarProductFilter() {
   const [filterMobileView, setFilterMobileView] = useState(false)
-  const { dispatch: productListingDispatch } = useProductListingContext()
+  const {
+    state: { includeOutOfStock, oneDayDeliveryOnly },
+    dispatch: productListingDispatch,
+  } = useProductListingContext()
 
   const brands = [...new Set(productData.map((item) => item.brand.text))]
 
@@ -84,9 +87,38 @@ function SideBarProductFilter() {
           </div>
         </div>
         <div className="sidebar-category">
-          <h3 className="sidebar-category-heading">Brand</h3>
+          <h3 className="sidebar-category-heading">Other Filters</h3>
           <div className="sidebar-category-component">
-            <InputCheckboxes checkboxOptions={brands} />
+            {/* <InputCheckboxes
+              option="One-day delivery Only"
+              dispatchType="TOGGLE_ONE_DAY_DELIVERY"
+            />
+            <InputCheckboxes
+              option="Include Out of Stock"
+              dispatchType="TOGGLE_OUT_OF_STOCK"
+            /> */}
+            <div className="InputCheckbox">
+              <input
+                type="checkbox"
+                name="includeOutOfStock"
+                checked={includeOutOfStock}
+                onChange={() =>
+                  productListingDispatch({ type: 'TOGGLE_OUT_OF_STOCK' })
+                }
+              />{' '}
+              Include Out Of Stock
+            </div>
+            <div className="InputCheckbox">
+              <input
+                type="checkbox"
+                name="oneDayDeliveryOnly"
+                checked={oneDayDeliveryOnly}
+                onChange={() =>
+                  productListingDispatch({ type: 'TOGGLE_ONE_DAY_DELIVERY' })
+                }
+              />{' '}
+              One Day Delivery Only
+            </div>
           </div>
         </div>
       </div>

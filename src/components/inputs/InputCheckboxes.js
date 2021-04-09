@@ -1,24 +1,33 @@
+import { useState } from 'react'
 import { useProductListingContext } from '../../contexts/ProductListingContext'
 
-function InputCheckboxes({ checkboxOptions }) {
+function InputCheckboxes({ option, dispatchType }) {
+  const [value, setValue] = useState(false)
+
   const { dispatch: productListingDispatch } = useProductListingContext()
 
   const changeHandler = (event) => {
-    console.log(event.target.value)
+    setValue((prevValue) => !prevValue)
+    // console.log({ value })
+    productListingDispatch({
+      type: dispatchType,
+      payload: !value,
+    })
   }
 
-  return checkboxOptions.map((item) => (
-    <div key={item.length} className="InputCheckbox">
+  // console.log({ option, dispatchType })
+
+  return (
+    <div key={option.length} className="InputCheckbox">
       <input
         type="checkbox"
-        name={item}
-        value={item}
+        name={option}
+        value={value}
         onChange={changeHandler}
-        defaultChecked
       />{' '}
-      {item}
+      {option}
     </div>
-  ))
+  )
 }
 
 export default InputCheckboxes

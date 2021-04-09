@@ -18,6 +18,8 @@ const productData = [
     categories: [{ type: 'football' }],
     rating: { stars: 3 },
     link: { url: 'https://shop.adidas.co.in/#!product/FH7353_unifotrn' },
+    oneDayDeliveryOnly: false,
+    inStock: false,
   },
   {
     id: 2,
@@ -40,6 +42,8 @@ const productData = [
     categories: [{ type: 'football' }],
     rating: { stars: 4 },
     link: { url: 'https://shop.adidas.co.in/#!product/GK3468_finalelge' },
+    oneDayDeliveryOnly: true,
+    inStock: false,
   },
   {
     id: 3,
@@ -63,6 +67,8 @@ const productData = [
     categories: [{ type: 'football' }],
     rating: { stars: 5 },
     link: { url: 'https://shop.adidas.co.in/#!product/GK3476_finaletrn' },
+    oneDayDeliveryOnly: true,
+    inStock: true,
   },
   {
     id: 4,
@@ -85,6 +91,8 @@ const productData = [
     categories: [{ type: 'football' }],
     rating: { stars: 3 },
     link: { url: 'https://shop.adidas.co.in/#!product/FS0256_fin20lge' },
+    oneDayDeliveryOnly: false,
+    inStock: true,
   },
   {
     id: 5,
@@ -110,6 +118,8 @@ const productData = [
       url:
         'https://www.nike.com/in/t/premier-league-pitch-football-sJh7Fg/CQ7151-420',
     },
+    oneDayDeliveryOnly: false,
+    inStock: false,
   },
 ]
 

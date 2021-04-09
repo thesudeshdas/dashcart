@@ -1,12 +1,34 @@
 import { ProductCard, SideBarProductFilter } from '../components'
 import { useProductListingContext } from '../contexts/ProductListingContext'
 
+const filterList = (list, rating, price, stock, delivery) => {
+  return list
+    .filter((item) => item.rating.stars >= rating)
+    .filter((item) => item.price.discounted <= price)
+    .filter((item) => (stock ? true : item))
+    .filter((item) => (delivery ? item : true))
+}
+
 function ProductListingPage() {
   const {
-    state: { filteredList, brands },
+    state: {
+      productsList,
+      rating,
+      price,
+      includeOutOfStock,
+      oneDayDeliveryOnly,
+    },
   } = useProductListingContext()
 
-  console.log({ filteredList, brands })
+  const filteredList = filterList(
+    productsList,
+    rating,
+    price.maximum,
+    includeOutOfStock,
+    oneDayDeliveryOnly
+  )
+
+  console.log({ filteredList })
 
   return (
     <div className="page-product-listing">

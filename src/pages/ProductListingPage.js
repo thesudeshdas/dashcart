@@ -28,8 +28,6 @@ function ProductListingPage() {
     oneDayDeliveryOnly
   )
 
-  console.log({ filteredList })
-
   return (
     <div className="page-product-listing">
       <div className="container-sidebar">

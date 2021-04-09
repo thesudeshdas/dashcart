@@ -1,24 +1,19 @@
 import { useState } from 'react'
+import { Route, Routes } from 'react-router'
 import './App.css'
 import { TopNavbar } from './components/index'
 import { ProductListingPage, WishlistPage, CartPage } from './pages/index'
 
 function App() {
-  const [route, setRoute] = useState('products')
-
-  const handleRouteChange = (childData) => setRoute(childData)
-
   return (
     <>
-      <TopNavbar changeRoute={handleRouteChange} />
+      <TopNavbar />
 
-      {route === 'products' ? (
-        <ProductListingPage />
-      ) : route === 'wishlist' ? (
-        <WishlistPage />
-      ) : route === 'cart' ? (
-        <CartPage />
-      ) : null}
+      <Routes>
+        <Route path="/" element={<ProductListingPage />} />
+        <Route path="/wishlist" element={<WishlistPage />} />
+        <Route path="/cart" element={<CartPage />} />
+      </Routes>
     </>
   )
 }

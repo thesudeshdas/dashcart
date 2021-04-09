@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { CartProvider } from './contexts/CartContext'
@@ -9,13 +10,15 @@ import { ProductListingProvider } from './contexts/ProductListingContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductListingProvider>
-      <CartProvider>
-        <WishlistProvider>
-          <App />
-        </WishlistProvider>
-      </CartProvider>
-    </ProductListingProvider>
+    <Router>
+      <ProductListingProvider>
+        <CartProvider>
+          <WishlistProvider>
+            <App />
+          </WishlistProvider>
+        </CartProvider>
+      </ProductListingProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 )

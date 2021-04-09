@@ -1,13 +1,12 @@
 import { ProductCard, SideBarProductFilter } from '../components'
 import { useProductListingContext } from '../contexts/ProductListingContext'
 
-const filterList = (list, rating, price, stock, delivery) => {
-  return list
+const filterList = (list, rating, price, stock, delivery) =>
+  list
     .filter((item) => item.rating.stars >= rating)
     .filter((item) => item.price.discounted <= price)
-    .filter((item) => (stock ? true : item))
+    .filter((item) => (stock ? item : true))
     .filter((item) => (delivery ? item : true))
-}
 
 function ProductListingPage() {
   const {
@@ -27,6 +26,12 @@ function ProductListingPage() {
     includeOutOfStock,
     oneDayDeliveryOnly
   )
+
+  console.log({
+    filteredList,
+    includeOutOfStock,
+    oneDayDeliveryOnly,
+  })
 
   return (
     <div className="page-product-listing">
